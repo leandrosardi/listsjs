@@ -98,9 +98,16 @@
 				},
 				on_add_item: function(h) {
 					// call ajax before the new list is added
-					// return true if ajax worked fine, and list can be added.
+					// return a value for the ID of the new element.
+					// return nul if new element is not allowed to be added because of ajax error.
+					return listsJs.uuidv4();
+				},
+				on_expand: function() {
+					// use this list to call ajax to get all items, in order to reduce the loadtime of the page when you are managing many compenents
+					// return true if ajax worked fine, and list is allowed to be expanded.
+					listsJs.set_loading(playlists, true);
 					return true;
-				}
+				},
 			});
 
 			// remove first element

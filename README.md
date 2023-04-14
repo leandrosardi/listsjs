@@ -78,7 +78,8 @@ All these files are included in this project. You can download them from this pa
 			},
 			on_add_item: function(h) {
 				// call ajax before the new list is added
-				// return true if ajax worked fine, and list can be added.
+				// return a value for the ID of the new element.
+				// return nul if new element is not allowed to be added because of ajax error.
 				return true;
 			}
 		});
