@@ -103,10 +103,15 @@
 					return listsJs.uuidv4();
 				},
 				on_expand: function() {
+					// disable add button and text input while loading
+					listsJs.disable_add_button(playlists);
+					listsJs.disable_add_input(playlists);
 					// use this list to call ajax to get all items, in order to reduce the loadtime of the page when you are managing many compenents
-					// return true if ajax worked fine, and list is allowed to be expanded.
 					listsJs.set_loading(playlists, true);
-					return true;
+
+					// re-enable add button and text input when ajax finishes
+					//listsJs.enable_add_button(playlists);
+					//listsJs.enable_add_input(playlists);
 				},
 			});
 
