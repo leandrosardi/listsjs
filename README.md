@@ -6,11 +6,7 @@
 # Lists.Js
 The **Lists.Js** is a little HTML widget to manage favourite lists on your UI.
 
-[Find a live example here](https://connectionsphere.com/developers/listsjs).
-
 **>>>> IF YOU LIKE THIS PROJECT, STAR IT ! <<<<** 
-
-![image](https://i.ibb.co/3fQd581/pic1.png)
 
 **Features**
 
