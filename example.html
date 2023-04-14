@@ -108,9 +108,9 @@
 					// call ajax before the new list is added
 					// set item id based on ajax response
 					// add item to the list
-					h.id = '4';
+					h.id =  listsJs.uuidv4();
 					listsJs.add_item(playlists, h);
-				} /*,
+				},
 				on_expand: function() {
 					// disable add button and text input while loading
 					listsJs.disable_add_button(playlists);
@@ -119,10 +119,9 @@
 					listsJs.set_loading(playlists, true);
 
 					// re-enable add button and text input when ajax finishes
-					//listsJs.enable_add_button(playlists);
-					//listsJs.enable_add_input(playlists);
-				},
-				*/
+					listsJs.enable_add_button(playlists);
+					listsJs.enable_add_input(playlists);
+				}
 			});
 
 			// remove first element
