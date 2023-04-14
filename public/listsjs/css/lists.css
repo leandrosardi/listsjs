@@ -1,0 +1,11 @@
+div.buttons div.btn-group {
+    position:relative;
+}
+  
+div.btn-group ul.dropdown-menu {
+    position: absolute;
+    right:0px;
+    top:25px;
+    width:155px;
+}
+  
