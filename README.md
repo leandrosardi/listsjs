@@ -1,6 +1,8 @@
 ![GitHub issues](https://img.shields.io/github/issues/leandrosardi/listsjs) ![GitHub](https://img.shields.io/github/license/leandrosardi/listsjs) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/leandrosardi/listsjs) ![GitHub last commit](https://img.shields.io/github/last-commit/leandrosardi/listsjs)
 
 
+**UNDER CONSTRUCTION - CHECK BACK IN A FEW DAYS**
+
 # Lists.Js
 The **Lists.Js** is a little HTML widget to manage favourite lists on your UI.
 
@@ -45,7 +47,6 @@ All these files are included in this project. You can download them from this pa
 <div id='playlists' style='width:750px;'> </div>
 <script>
 	$(document).ready(function() {
-
 		// simple filter
 		var playlists = document.getElementById('playlists');	  
 
