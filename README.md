@@ -42,68 +42,67 @@ All these files are included in this project. You can download them from this pa
 ```html
 <div id='playlists' style='width:750px;'> </div>
 <script>
-		$(document).ready(function() {
-			// simple filter
-			var playlists = document.getElementById('playlists');	  
+$(document).ready(function() {
+	// simple filter
+	var playlists = document.getElementById('playlists');	  
 
-			listsJs.draw(playlists, {
-				id: '123',
-				caption: 'Playlists',
-				color: 'blue',
-				lists: [{
-					id: '1',
-					name: 'list1',
-					checked: true,
-					deleted: false
-				}, { 
-					id: '2',
-					name: 'list2',
-					checked: false,
-					deleted: false
-				}, { 
-					id: '3',
-					name: 'list3',
-					checked: false,
-					deleted: true
-				}],
-				on_check_item: function(h) {
-					// call ajax before the list is marked as checked
-                    // set item opacity 0.5 while the ajax is being called
-					// uncheck item if ajax finished successfullt
-                    // set item opacity 1 while the ajax is done
-                    listsJs.set_item_opacity(playlists, h.id, '0.5');
-					listsJs.check_item(playlists, h.id);
-					listsJs.set_item_opacity(playlists, h.id, '1');
-				},
-				on_uncheck_item: function(h) {
-					// call ajax before the list is marked as unchecked
-                    // set item opacity 0.5 while the ajax is being called
-					// uncheck item if ajax finished successfullt
-                    // set item opacity 1 while the ajax is done
-                    listsJs.set_item_opacity(playlists, h.id, '0.5');
-					listsJs.uncheck_item(playlists, h.id);
-					listsJs.set_item_opacity(playlists, h.id, '1');
-				},
-				on_add_item: function(h) {
-					// call ajax before the new list is added
-					// set item id based on ajax response
-					// add item to the list
-					h.id =  listsJs.uuidv4();
-					listsJs.add_item(playlists, h);
-				},
-				on_expand: function() {
-					// disable add button and text input while loading
-					listsJs.disable_add_button(playlists);
-					listsJs.disable_add_input(playlists);
-					// use this list to call ajax to get all items, in order to reduce the loadtime of the page when you are managing many compenents
-					listsJs.set_loading(playlists, true);
-
-					// re-enable add button and text input when ajax finishes
-					listsJs.enable_add_button(playlists);
-					listsJs.enable_add_input(playlists);
-				}
-			});
-		});
+	listsJs.draw(playlists, {
+		id: '123',
+		caption: 'Playlists',
+		color: 'blue',
+		lists: [{
+			id: '1',
+			name: 'list1',
+			checked: true,
+			deleted: false
+		}, { 
+			id: '2',
+			name: 'list2',
+			checked: false,
+			deleted: false
+		}, { 
+			id: '3',
+			name: 'list3',
+			checked: false,
+			deleted: true
+		}],
+		on_check_item: function(h) {
+			// call ajax before the list is marked as checked
+            // set item opacity 0.5 while the ajax is being called
+			// uncheck item if ajax finished successfullt
+            // set item opacity 1 while the ajax is done
+            listsJs.set_item_opacity(playlists, h.id, '0.5');
+			listsJs.check_item(playlists, h.id);
+			listsJs.set_item_opacity(playlists, h.id, '1');
+		},
+		on_uncheck_item: function(h) {
+			// call ajax before the list is marked as unchecked
+            // set item opacity 0.5 while the ajax is being called
+			// uncheck item if ajax finished successfullt
+            // set item opacity 1 while the ajax is done
+            listsJs.set_item_opacity(playlists, h.id, '0.5');
+			listsJs.uncheck_item(playlists, h.id);
+			listsJs.set_item_opacity(playlists, h.id, '1');
+		},
+		on_add_item: function(h) {
+			// call ajax before the new list is added
+			// set item id based on ajax response
+			// add item to the list
+			h.id =  listsJs.uuidv4();
+			listsJs.add_item(playlists, h);
+		},
+		on_expand: function() {
+			// disable add button and text input while loading
+			listsJs.disable_add_button(playlists);
+			listsJs.disable_add_input(playlists);
+			// use this list to call ajax to get all items, in order to reduce the loadtime of the page when you are managing many compenents
+			listsJs.set_loading(playlists, true);
+			// re-enable add button and text input when ajax finishes
+			listsJs.enable_add_button(playlists);
+			listsJs.enable_add_input(playlists);
+		}
+	});
+});
 </script>
 ```
 
