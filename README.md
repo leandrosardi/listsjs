@@ -81,6 +81,17 @@ All these files are included in this project. You can download them from this pa
 				// return a value for the ID of the new element.
 				// return nul if new element is not allowed to be added because of ajax error.
 				return true;
+			},
+			on_expand: function() {
+				// disable add button and text input while loading
+				listsJs.disable_add_button(playlists);
+				listsJs.disable_add_input(playlists);
+				// use this list to call ajax to get all items, in order to reduce the loadtime of the page when you are managing many compenents
+				listsJs.set_loading(playlists, true);
+
+				// re-enable add button and text input when ajax finishes
+				//listsJs.enable_add_button(playlists);
+				//listsJs.enable_add_input(playlists);
 			}
 		});
 	});
