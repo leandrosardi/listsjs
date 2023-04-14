@@ -88,20 +88,29 @@
 				}],
 				on_check_item: function(h) {
 					// call ajax before the list is marked as checked
-					// return true if ajax worked fine, and list check is allowed.
-					return true;
+                    // set item opacity 0.5 while the ajax is being called
+					// uncheck item if ajax finished successfullt
+                    // set item opacity 1 while the ajax is done
+                    listsJs.set_item_opacity(playlists, h.id, '0.5');
+					listsJs.check_item(playlists, h.id);
+					listsJs.set_item_opacity(playlists, h.id, '1');
 				},
 				on_uncheck_item: function(h) {
 					// call ajax before the list is marked as unchecked
-					// return true if ajax worked fine, and list uncheck is allowed.
-					return true;
+                    // set item opacity 0.5 while the ajax is being called
+					// uncheck item if ajax finished successfullt
+                    // set item opacity 1 while the ajax is done
+                    listsJs.set_item_opacity(playlists, h.id, '0.5');
+					listsJs.uncheck_item(playlists, h.id);
+					listsJs.set_item_opacity(playlists, h.id, '1');
 				},
 				on_add_item: function(h) {
 					// call ajax before the new list is added
-					// return a value for the ID of the new element.
-					// return nul if new element is not allowed to be added because of ajax error.
-					return listsJs.uuidv4();
-				},
+					// set item id based on ajax response
+					// add item to the list
+					h.id = '4';
+					listsJs.add_item(playlists, h);
+				} /*,
 				on_expand: function() {
 					// disable add button and text input while loading
 					listsJs.disable_add_button(playlists);
@@ -113,6 +122,7 @@
 					//listsJs.enable_add_button(playlists);
 					//listsJs.enable_add_input(playlists);
 				},
+				*/
 			});
 
 			// remove first element
