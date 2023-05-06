@@ -56,15 +56,35 @@
 					</pre>
 				</div>
 			</section>
+		</section>
 
+        <br/>
+
+		<section class="container span12">	  
+			<section class="box">
+				<header>
+					<h5>
+						<i class="icon-th-list"></i>
+						Example
+					</h5>
+				</header>
+				<div class="span5" id='tags'>
+				</div>
+				<div class="span6">
+					<pre>
+						(source code here)
+					</pre>
+				</div>
+			</section>
 		</section>
 	</body>
 
 	<script>
 		$(document).ready(function() {
 
-			// simple filter
+			// lists
 			var playlists = document.getElementById('playlists');	  
+			var tags = document.getElementById('tags');	  
 
 			listsJs.draw(playlists, {
 				id: '123',
@@ -111,7 +131,9 @@
 					h.id =  listsJs.uuidv4();
 					listsJs.add_item(playlists, h);
 				},
+				/*
 				on_expand: function() {
+					
 					// disable add button and text input while loading
 					listsJs.disable_add_button(playlists);
 					listsJs.disable_add_input(playlists);
@@ -122,11 +144,12 @@
 					listsJs.enable_add_button(playlists);
 					listsJs.enable_add_input(playlists);
 				}
+				*/
 			});
 
 			// remove first element
 			$('#remove-first').click(function() {
-				listsJs.remove_item(playlists, '2');
+				listsJs.remove_item(playlists, '1');
 			});
 
 			// remove all elements
@@ -139,6 +162,27 @@
 				listsJs.set_item_opacity(playlists, '1', 0.5);
 			});
 
+			listsJs.draw(tags, {
+				id: '124',
+				caption: 'Tags',
+				color: 'blue',
+				lists: [{
+					id: '1',
+					name: 'list1',
+					checked: true,
+					deleted: false
+				}, { 
+					id: '2',
+					name: 'list2',
+					checked: false,
+					deleted: false
+				}, { 
+					id: '3',
+					name: 'list3',
+					checked: false,
+					deleted: true
+				}]
+			});
 		});
 	</script>
 </html>
